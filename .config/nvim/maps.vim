@@ -28,3 +28,15 @@ nnoremap <leader>ww :wa!<cr>
 nnoremap <leader>wq :wqall!<cr>
 inoremap <leader>ww :wqall!<cr>
 
+" Navigate buffers
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+
+" file browser
+nnoremap <leader>e :Lexplore 30<CR>
+
+" Rezie windows with arrow keys
+nnoremap  <S-Up>   :resize -2<CR>
+nnoremap  <S-Down> :resize +2<CR>
+nnoremap  <S-Left> :vertical -2<CR>
+nnoremap  <S-Right> :vertical +2<CR>
