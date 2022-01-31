@@ -22,8 +22,9 @@ nnoremap  <C-l> <C-w>l
 " UltiSnip Remap
 "let g:UltiSnupsExpandTrigger="<tab>"
 
-" Save file with <leader> + s
-nnoremap <leader>s :w<cr>
-inoremap <leader>s :w<cr>
-nnoremap <leader>ww :wa!<cr>
+" Write and quit all buffer
 inoremap <leader>ww :wa!<cr>
+nnoremap <leader>ww :wa!<cr>
+nnoremap <leader>wq :wqall!<cr>
+inoremap <leader>ww :wqall!<cr>
+

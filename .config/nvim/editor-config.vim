@@ -42,6 +42,10 @@ EOF
 
 au TextYankPost * silent! lua vim.highlight.on_yank()
 
+augroup remove_whitespace
+        autocmd BufWritePre * %s/\s\+$//e
+    augroup END
+
 lua << END
 require('lualine').setup {
   options = {

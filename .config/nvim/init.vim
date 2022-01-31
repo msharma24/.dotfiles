@@ -54,7 +54,7 @@ let loaded_matchparen = 1
 runtime ./plugins.vim
 runtime ./editor-config.vim
 runtime ./colors.vim
-runtime ./tree-sitter.vim
+runtime ./treesitter.vim
 runtime ./maps.vim
 
 "}}}
