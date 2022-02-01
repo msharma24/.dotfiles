@@ -1,3 +1,4 @@
 " Theme
-colorscheme moonfly
+" colorscheme moonfly
+colorscheme  tokyodark
 let g:moonflyCursorColor =  1

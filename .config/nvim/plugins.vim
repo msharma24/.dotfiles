@@ -10,6 +10,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/spellsitter.nvim'
 Plug 'tpope/vim-commentary'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
 
 " Snippets
 Plug 'honza/vim-snippets'
