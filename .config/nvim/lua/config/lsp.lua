@@ -1,4 +1,5 @@
 -- Snipmate format
+require("luasnip.loaders.from_vscode").load({ paths = { "~/.local/share/nvim/site/pack/packer/start/friendly-snippets/" } })
 require("luasnip.loaders.from_snipmate").load()
 
 -- Add additional capabilities supported by nvim-cmp
@@ -59,8 +60,8 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = "nvim_lua" },
     { name = 'luasnip' },
+    { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
   },

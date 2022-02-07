@@ -25,13 +25,19 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- Leader +w to save the file
+keymap("n", "<leader>w", ":w<cr>", opts)
+keymap("n", "<leader>wz", ":wq!<cr>", opts)
+
+-- NvimTree
+keymap("n", "<leader>i", ":NvimTreeToggle<cr>", opts)
+keymap("n",  "<leader>r", ":NvimTreeRefresh<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<S-Up>", ":resize -2<CR>", opts)
+keymap("n", "<S-Down>", ":resize +2<CR>", opts)
+keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -72,5 +78,30 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- vim-terraform settings
 -- ---------------------------------------------------------------------
+vim.cmd [[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]]
+vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
+vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
+vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
+vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
 vim.cmd[[let g:terraform_fmt_on_save=1]]
 vim.cmd[[let g:terraform_align=1]]
+
+-- auto format
+vim.cmd[[autocmd BufWritePre *.go,*lua lua vim.lsp.buf.formatting_sync()]]
+
+-- Telescope
+vim.cmd[[noremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>]]
+vim.cmd[[noremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>]]
+vim.cmd[[noremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>]]
+vim.cmd[[noremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>]]
+
+-- Repace word under cursor
+vim.cmd[[nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
+vim.cmd[[nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
+
+vim.cmd[[
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+augroup END
+]]
