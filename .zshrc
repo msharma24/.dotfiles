@@ -78,6 +78,7 @@ plugins=(fzf \
     ssh-agent \
     zsh-interactive-cd \
     history \
+    helm \
     ansible \
     z git aws docker terraform)
 
@@ -112,6 +113,7 @@ alias vi="nvim"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias init.vim="nvim ~/.config/nvim/init.vim"
 alias "le"="exa -la"
+alias "exa"="ls"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -119,3 +121,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export KUBE_EDITOR=nvim
