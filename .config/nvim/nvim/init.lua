@@ -1,0 +1,8 @@
+require("config.options")
+require("config.keymaps")
+require("config.plugins")
+require("config.colorscheme")
+require("config.lsp")
+require("config.lualine")
+require("config.treesitter")
+--require("config.null-ls")
