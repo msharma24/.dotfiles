@@ -114,6 +114,9 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias init.vim="nvim ~/.config/nvim/init.vim"
 alias "le"="exa -la"
 alias "exa"="ls"
+alias ip="dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com"
+alias ip_info="curl -qs https://ifconfig.co/json | jq -r '.ip,.city,.country,.hostname,.asn_org'"
+alias localip="ipconfig getifaddr en0"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
