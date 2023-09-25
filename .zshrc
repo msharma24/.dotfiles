@@ -150,7 +150,7 @@ compdef _cdk_yargs_completions cdk
 alias cdk="npx cdk"
 setopt completealiases
 
-export NODE_AUTH_TOKEN=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
+#export NODE_AUTH_TOKEN=
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 alias kill-all-docker='docker kill $(docker ps -q)'
